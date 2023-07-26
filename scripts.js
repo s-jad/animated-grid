@@ -115,12 +115,12 @@ children.forEach(function(childEl) {
             const gapBufferLeft = (newGridColumn.randB - 1) * gridGap;
             const gapBufferWidth = ((newGridColumn.randA - newGridColumn.randB) - 1) * gridGap;
             newChildWidth = (newGridColumn.randA - newGridColumn.randB) * colWidth + gapBufferWidth;
-            newChildLeft = (newGridColumn.randB * colWidth) - colWidth + gapBufferLeft + containerPadding;
+            newChildLeft = (newGridColumn.randB * colWidth) - colWidth + gapBufferLeft + (containerPadding * 2) + 2;
         } else {
             const gapBufferLeft = (newGridColumn.randA - 1) * gridGap;
             const gapBufferWidth = ((newGridColumn.randB - newGridColumn.randA) - 1) * gridGap;
             newChildWidth = (newGridColumn.randB - newGridColumn.randA) * colWidth + gapBufferWidth;
-            newChildLeft = (newGridColumn.randA * colWidth) - colWidth + gapBufferLeft + containerPadding;
+            newChildLeft = (newGridColumn.randA * colWidth) - colWidth + gapBufferLeft + (containerPadding * 2) + 2;
         }
 
         // Stops childEl from covering whole viewport when in pos: absolute mode
@@ -142,7 +142,7 @@ children.forEach(function(childEl) {
         // Prepare animation
         const animationName = `childAnimation_${Date.now()}`;
         const animationDuration = "1000ms";
-        const animationTransition = "cubic-bezier(.26,.44,.83,.58)";
+        const animationTransition = "cubic-bezier(.43,.22,.43,.92)";
         const animationKeyframes = `
             @keyframes ${animationName} {
                 0% {
