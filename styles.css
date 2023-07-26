@@ -1,0 +1,180 @@
+/* Box sizing rules */
+
+html {
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* BEGINNING OF STYLES */
+
+:root {
+    --root-hue: 0;
+    --root-saturation: 90%;
+    --root-lightness: 80%;
+}
+
+.container {
+    height: 100svh;
+    display: grid;
+    grid-template-columns: repeat(6, calc(calc(100svw / 6) - 5rem));
+    grid-template-rows: repeat(6, calc(calc(100svh / 6) - 5rem));
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    background: hsl(0, 10%, 90%);
+    padding: 1rem;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.children {
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 24px;
+    border: 1px solid hsl(30, 10%, 10%);
+    border-radius: 2rem 1rem / 5rem 1rem;
+    box-shadow: 0 0 5px hsl(0, 5%, 40%);
+}
+
+#child-one {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    --hue: calc(var(--root-hue) + 20);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-two {
+    grid-column: 3/5;
+    grid-row: 1/3;
+    --hue: calc(var(--root-hue) + 40);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-three {
+    grid-column: 5/7;
+    grid-row: 1/3;
+    --hue: calc(var(--root-hue) + 60);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-four {
+    grid-column: 1/3;
+    grid-row: 3/5;
+    --hue: calc(var(--root-hue) + 80);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-five {
+    grid-column: 3/5;
+    grid-row: 3/5;
+    --hue: calc(var(--root-hue) + 100);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-six {
+    grid-column: 5/7;
+    grid-row: 3/5;
+    --hue: calc(var(--root-hue) + 120);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-seven {
+    grid-column: 1/3;
+    grid-row: 5/7;
+    --hue: calc(var(--root-hue) + 150);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-eight {
+    grid-column: 3/5;
+    grid-row: 5/7;
+    --hue: calc(var(--root-hue) + 170);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+#child-nine {
+    grid-column: 5/7;
+    grid-row: 5/7;
+    --hue: calc(var(--root-hue) + 190);
+    background: hsl(var(--hue), var(--root-saturation), var(--root-lightness));
+}
+
+
